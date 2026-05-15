@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Journal | Workspace</title>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="header-top">
+                <h1>Journal</h1>
+                <button id="logoutBtn" class="btn-text">Logout</button>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search memories...">
+            </div>
+        </header>
+
+        <section class="composer">
+            <textarea id="entryInput" placeholder="Write your heart out..." oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
+            <div class="composer-actions">
+                <button id="saveBtn" class="btn-primary">Save Entry</button>
+            </div>
+        </section>
+
+        <div id="entriesList" class="entries-container">
+            </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

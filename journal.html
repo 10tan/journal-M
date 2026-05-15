@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Journal</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <span class="logo">Daily Journal</span>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="input-section">
+            <div class="entry-meta" style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+                <input type="text" id="entryTitle" placeholder="Entry Title (Optional)" 
+                       style="border: none; border-bottom: 2px solid #eee; border-radius: 0; padding: 5px 0; font-weight: bold; width: 65%; background: transparent; outline: none;">
+                <span id="liveClock" style="font-size: 0.85rem; color: #888; font-family: monospace;"></span>
+            </div>
+
+            <textarea 
+                id="entryInput" 
+                rows="2" 
+                placeholder="Write your entry for today..." 
+                oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"
+            ></textarea>
+            
+            <div class="actions">
+                <input type="text" id="searchInput" placeholder="Search entries...">
+                <button id="saveBtn">Save Entry</button>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid #ddd; margin-bottom: 20px; opacity: 0.5;">
+
+        <div id="entriesList">
+            <p style="text-align: center; color: #888;">Loading your memories...</p>
+        </div>
+    </main>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
