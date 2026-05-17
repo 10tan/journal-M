@@ -3,31 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Journal | Workspace</title>
+    <link rel="stylesheet" href="login-style.css">
+    <title>Observatory Core | Stellar Log</title>
 </head>
 <body>
-    <div class="container">
-        <header class="main-header">
-            <div class="header-top">
-                <h1>Journal</h1>
-                <button id="logoutBtn" class="btn-text">Logout</button>
-            </div>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search memories...">
-            </div>
-        </header>
+    <canvas id="canvas-stars"></canvas>
 
-        <section class="composer">
-            <textarea id="entryInput" placeholder="Write your heart out..." oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
-            <div class="composer-actions">
-                <button id="saveBtn" class="btn-primary">Save Entry</button>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="security-header">
+                <div class="pulsar-icon"></div>
+                <span class="status-text">HI, CUTIE</span>
             </div>
-        </section>
+            
+            <h1>JOURNALS</h1>
+            <p class="subtitle">Personal Archive</p>
 
-        <div id="entriesList" class="entries-container">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="OBSERVER_ID" required autocomplete="off">
             </div>
+
+            <div class="input-group">
+                <input type="password" id="password" placeholder="PASSKEY" required autocomplete="off">
+            </div>
+
+            <div class="button-wrapper">
+                <button type="button" id="loginBtn">ACCESS_JOURNAL</button>
+            </div>
+            
+            <div id="errorMessage"></div>
+        </div>
     </div>
-    <script type="module" src="script.js"></script>
+
+    <script type="module" src="login-script.js"></script>
 </body>
 </html>

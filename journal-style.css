@@ -1,0 +1,242 @@
+/* journal-style.css - Transparent Observatory Theme */
+:root {
+    --space-deep: #03030a;
+    --deck-bg: rgba(13, 14, 26, 0.75);
+    --cosmic-gold: #f59e0b;
+    --starlight: #e2e8f0;
+    --muted-dust: #6272a4;
+    --panel-border: rgba(245, 158, 11, 0.15);
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    background-color: var(--space-deep);
+    color: var(--starlight);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-y: auto;
+    min-height: 100vh;
+}
+
+#canvas-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.navbar, .container {
+    position: relative;
+    z-index: 2;
+}
+
+.navbar {
+    background: rgba(2, 2, 7, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--panel-border);
+    padding: 18px 0;
+}
+
+.nav-content {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.logo {
+    font-family: monospace;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: var(--cosmic-gold);
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 25px;
+    padding-bottom: 60px;
+}
+
+.input-section {
+    background: var(--deck-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--panel-border);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    margin-bottom: 30px;
+}
+
+.entry-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+#entryTitle {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.2);
+    width: 65%;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.1rem;
+    padding: 6px 0;
+    outline: none;
+    color: white;
+    transition: all 0.3s;
+}
+
+#entryTitle:focus { 
+    border-color: var(--cosmic-gold); 
+}
+
+#liveClock {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--cosmic-gold);
+    letter-spacing: 1px;
+}
+
+#entryInput {
+    width: 100%;
+    min-height: 70px; 
+    background: rgba(0, 0, 0, 0.35);
+    padding: 15px;
+    border: 1px solid rgba(226, 232, 240, 0.15);
+    border-radius: 6px;
+    margin-bottom: 25px;
+    resize: none;
+    overflow-y: hidden;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--starlight);
+    transition: all 0.3s;
+}
+
+#entryInput:focus {
+    outline: none;
+    border-color: var(--cosmic-gold);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* --- RESTRUCTURED SEARCH CONTROLS --- */
+.actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;       
+}
+
+.search-wrapper {
+    width: 100%;                 
+    border-top: 1px solid rgba(226, 232, 240, 0.08); 
+    padding-top: 20px;          
+}
+
+#searchInput {
+    width: 100%;                 
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px 16px;
+    border: 1px solid rgba(226, 232, 240, 0.15);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--starlight);
+    font-family: monospace;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--cosmic-gold);
+    background: rgba(0, 0, 0, 0.45);
+}
+
+button { 
+    cursor: pointer; 
+    font-family: monospace; 
+    transition: all 0.3s ease; 
+}
+
+#saveBtn {
+    background: transparent;
+    color: var(--cosmic-gold);
+    border: 1px solid var(--cosmic-gold);
+    padding: 10px 32px;         
+    border-radius: 4px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#saveBtn:hover {
+    background: rgba(245, 158, 11, 0.1);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+.btn-logout {
+    background: transparent;
+    border: 1px solid #f7768e;
+    color: #f7768e;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.btn-logout:hover { 
+    background: rgba(247, 118, 142, 0.1); 
+}
+
+/* Dynamic Cards */
+.entry {
+    background: rgba(13, 14, 26, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.08);
+    margin-top: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: all 0.3s;
+}
+
+.entry:hover {
+    border-color: rgba(245, 158, 11, 0.25);
+    background: rgba(13, 14, 26, 0.8);
+}
+
+.entry-header { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 12px; 
+    font-family: monospace; 
+}
+
+.entry-title { 
+    color: var(--cosmic-gold); 
+    font-size: 1rem; 
+    letter-spacing: 1px; 
+}
+
+.entry-time { 
+    color: var(--muted-dust); 
+    font-size: 0.8rem; 
+}
+
+.entry-content { 
+    line-height: 1.6; 
+    color: rgba(226, 232, 240, 0.85); 
+    white-space: pre-wrap; 
+}

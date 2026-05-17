@@ -1,0 +1,189 @@
+/* login-style.css - Cosmic Gold Observatory Theme */
+:root {
+    --space-bg: #03030a;
+    --starlight: #e2e8f0;
+    --cosmic-gold: #f59e0b;
+    --nebula-glow: rgba(245, 158, 11, 0.22); /* Radiant Amber Nebula Dust */
+    --muted-dust: #44475a;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--space-bg);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+}
+
+/* Background Stars Canvas Placement */
+#canvas-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Outer Flexbox Alignment Grid */
+.login-container {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The Frosted Glass Viewport Module with Breathing Stellar Corona */
+.login-card {
+    background: rgba(6, 6, 14, 0.88); /* Ultra-dark core to maximize golden contrast */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 50px 45px;
+    border-radius: 16px;
+    border: 1px solid rgba(245, 158, 11, 0.15); /* Gracefully tinted gold edge */
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 40px var(--nebula-glow), 0 25px 60px rgba(0, 0, 0, 0.8);
+    animation: nebulaPulse 7s ease-in-out infinite alternate;
+}
+
+/* Deep Space Thermal Fluctuations */
+@keyframes nebulaPulse {
+    0% { 
+        box-shadow: 0 0 35px rgba(245, 158, 11, 0.18), 0 25px 60px rgba(0, 0, 0, 0.8);
+        border-color: rgba(245, 158, 11, 0.12);
+    }
+    100% { 
+        box-shadow: 0 0 55px rgba(217, 119, 6, 0.38), 0 25px 60px rgba(0, 0, 0, 0.8);
+        border-color: rgba(245, 158, 11, 0.28);
+    }
+}
+
+/* Telemetry Header Group */
+.security-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* Blinking Cosmic Core Sensor */
+.pulsar-icon {
+    width: 6px;
+    height: 6px;
+    background: var(--cosmic-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 12px 2px var(--cosmic-gold);
+    animation: pulsar 1.2s infinite ease-in-out;
+}
+
+@keyframes pulsar {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.5); opacity: 1; }
+}
+
+.status-text {
+    color: var(--cosmic-gold);
+    font-family: monospace;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.login-card h1 {
+    color: var(--starlight);
+    font-weight: 200;
+    font-size: 2.2rem;
+    letter-spacing: 10px;
+    margin: 10px 0 5px 0;
+}
+
+.login-card .subtitle {
+    color: var(--muted-dust);
+    font-size: 0.75rem;
+    margin-bottom: 40px;
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+
+/* Custom Coordinate Inputs */
+.input-group {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.login-card input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.15);
+    padding: 12px 4px;
+    color: var(--starlight);
+    font-family: monospace;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.login-card input::placeholder {
+    color: var(--muted-dust);
+    letter-spacing: 2px;
+    transition: color 0.2s ease;
+}
+
+.login-card input:focus::placeholder {
+    color: transparent;
+}
+
+/* Golden Ion Flare when entering coordinates */
+.login-card input:focus {
+    border-bottom: 1px solid var(--cosmic-gold);
+    background: rgba(245, 158, 11, 0.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Optics Alignment Controller Link */
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#loginBtn {
+    background: transparent;
+    color: var(--starlight);
+    border: 1px solid rgba(226, 232, 240, 0.3);
+    padding: 10px 36px;
+    font-family: monospace;
+    font-weight: normal;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+#loginBtn:hover {
+    border-color: var(--cosmic-gold);
+    color: var(--cosmic-gold);
+    background: rgba(245, 158, 11, 0.04);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
+    letter-spacing: 5px;
+}
+
+#errorMessage {
+    color: #f7768e;
+    font-family: monospace;
+    font-size: 0.75rem;
+    margin-top: 20px;
+    min-height: 20px;
+    letter-spacing: 1px;
+}
