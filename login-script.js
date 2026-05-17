@@ -135,16 +135,7 @@ init();
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDzp7JqZSjSpr_4rb_FNvYGTPE8cnLYnvM",
-    authDomain: "journal-94c51.firebaseapp.com",
-    projectId: "journal-94c51",
-    storageBucket: "journal-94c51.firebasestorage.app",
-    messagingSenderId: "213844260707",
-    appId: "1:213844260707:web:ab5708d2cf72008e198556",
-    // --- UPDATED TARGET HOOK ---
-    databaseURL: "https://journal-94c51-default-rtdb.europe-west1.firebasedatabase.app"
-};
+import { firebaseConfig } from './config.js';
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
